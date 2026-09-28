@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background-color: #ffffff;
+    margin: 3px;
+}
+
+header{
+    background-color: #8fd4f5;
+}
+
+section {
+    padding: 20px;
+}
+
+article {
+    background-color: white;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+footer {
+    background-color: #8fd4f5;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #b700ff;
+    padding-left: 20px;
+}
+/*Las pseudoclases*/
+nav a:hover {
+    background-color: #fff7c7;
+}
+
+nav a:visited {
+    color: #fc0000;
+}
+
+article:first-child {
+    background-color: aquamarine;
+}
+
+/*5 clases que he hecho (las he metido en distintos sitios: en inicio, contacto, 
+juegos, películas y sobre mí)*/
+.clase1 {
+    background-color: #e3f2fd;
+}
+
+.clase2 {
+    border: 2px solid #ff0000;
+}
+
+.clase3 {
+    background-color: #b700ff;
+}
+
+.clase4{
+    font-weight: bold;
+}
+
+.clase5{
+    text-align: center;
+}
+
+/*Las clases combinadas:*/
+article.clase1 {
+    border: 2px solid #007acc;
+}
+
+section.clase2.clase3 {
+    background-color: #d0ebff;
+}
+
+nav a.clase5:hover {
+    background-color: #007acc;
+}

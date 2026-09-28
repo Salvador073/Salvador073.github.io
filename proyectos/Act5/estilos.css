@@ -1,0 +1,36 @@
+/* Diseño por defecto */
+.texto-imagen {
+  display: flex; /* Usamos Flexbox */
+  flex-direction: column; /* Elementos verticales*/
+  gap: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Orden en móbil */
+.texto-imagen .imagen {
+  order: 1; 
+}
+
+.texto-imagen .texto {
+  order: 2; 
+}
+
+/* Para escritorio */
+@media (min-width: 768px) {
+  .texto-imagen {
+    flex-direction: row; /* Elementos horizontales */
+    align-items: center; /* Elementos centrados */
+  }
+
+  /* Cambio de orden */
+  .texto-imagen .imagen {
+    order: 1; /* La imagen pasa a estar a la izquierda  */
+    flex: 1; /* Hacemos que ocupe la mitad del espacio */
+  }
+
+  .texto-imagen .texto {
+    order: 2; /* El texto pasa a estar a la derecha  */
+    flex: 1; /* Hacemos que ocupe la otra mitad del espacio */
+  }
+}

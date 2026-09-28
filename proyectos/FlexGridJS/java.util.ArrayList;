@@ -1,0 +1,47 @@
+import java.util.ArrayList;
+
+public class GestorAlumnos {
+
+    private ArrayList<Alumno> alumnos;
+
+    // Constructor
+    public GestorAlumnos() {
+        alumnos = new ArrayList<>();
+    }
+
+    // Agregar alumno
+    public void agregarAlumno(Alumno alumno) {
+        alumnos.add(alumno);
+    }
+
+    // Listar alumnos
+    public void listarAlumnos() {
+        if (alumnos.isEmpty()) {
+            System.out.println("No hay alumnos registrados.");
+        } else {
+            for (Alumno a : alumnos) {
+                System.out.println(a);
+            }
+        }
+    }
+
+    // Buscar alumno por ID
+    public Alumno buscarPorId(int id) {
+        for (Alumno a : alumnos) {
+            if (a.getId() == id) {
+                return a;
+            }
+        }
+        return null;
+    }
+
+    // Eliminar alumno
+    public boolean eliminarAlumno(int id) {
+        Alumno alumno = buscarPorId(id);
+        if (alumno != null) {
+            alumnos.remove(alumno);
+            return true;
+        }
+        return false;
+    }
+}

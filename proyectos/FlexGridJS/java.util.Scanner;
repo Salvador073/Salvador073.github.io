@@ -1,0 +1,51 @@
+import java.util.Scanner; 
+public class Main {
+ public static void main(String[] args) {
+ GestorAlumnos gestor = new GestorAlumnos();
+ Scanner sc = new Scanner(System.in);
+ int opcion;
+ do {
+ System.out.println("\n--- SISTEMA DE GESTIÓN DE ALUMNOS ---");
+ System.out.println("1. Registrar alumno");  System.out.println("2. Listar alumnos");
+ System.out.println("3. Buscar alumno por ID");  System.out.println("4. Eliminar alumno");
+ System.out.println("5. Salir");
+ System.out.print("Opción: ");
+ opcion = sc.nextInt();
+ switch (opcion) {
+ case 1:
+ System.out.print("ID: ");
+ int id = sc.nextInt();
+ sc.nextLine();
+ System.out.print("Nombre: ");
+ String nombre = sc.nextLine();
+ System.out.print("Edad: ");
+ int edad = sc.nextInt();
+ sc.nextLine();
+ System.out.print("Curso: ");
+ String curso = sc.nextLine();
+ Alumno nuevo = new Alumno(id, nombre, edad, curso);  gestor.agregarAlumno(nuevo);
+ System.out.println("Alumno registrado correctamente.");
+ break;
+ case 2:
+ gestor.listarAlumnos();
+ break;
+ case 3:
+ System.out.print("Ingrese ID: ");
+ int buscarId = sc.nextInt();
+ Alumno encontrado = gestor.buscarPorId(buscarId);  if (encontrado != null) {
+ System.out.println(encontrado);  } else {
+ System.out.println("Alumno no encontrado.");  }
+ break;
+ case 4:
+ System.out.print("Ingrese ID a eliminar: ");  int eliminarId = sc.nextInt();
+ if (gestor.eliminarAlumno(eliminarId)) {  System.out.println("Alumno eliminado.");  } else {
+ System.out.println("No existe ese alumno.");  }
+ break;
+ case 5:
+ System.out.println("Saliendo...");  break;
+ default:
+ System.out.println("Opción inválida.");  }
+ } while (opcion != 5);
+ sc.close();
+ }
+}

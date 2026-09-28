@@ -1,0 +1,256 @@
+/*Reset para evitar estilos predeterminados inconsistentes*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*Distintas variables con root*/
+:root {
+    --color-fondo: #e4e4e4;
+    --color-blanco: #ffffff;
+    --color-azul: #135dfc;
+    --color-texto: #000000;
+    --color-texto2: #444444;
+    --color-borde: #333333;
+
+    --fuente-principal: Arial, sans-serif;
+
+    --espaciado1: 0.75rem;
+    --espaciado-md: 1.5rem;
+    --espaciado-lg: 3rem;
+}
+
+/*Base del HTML*/
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    margin-bottom: var(--espaciado1);
+}
+
+/*Cabecera y nav*/
+header {
+    background-color: var(--color-azul);
+    color: white;
+    padding: var(--espaciado1) var(--espaciado-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    gap: var(--espaciado-md);
+}
+
+nav a {
+    color: white;
+    font-size: 0.95rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/*HERO */
+.hero {
+    background-color: #dbeafe;
+    text-align: center;
+    padding: var(--espaciado-lg);
+}
+
+.hero h2 {
+    font-size: 2rem;
+    color: var(--color-azul);
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: var(--color-texto2);
+    margin-top: var(--espaciado1);
+}
+
+/*Sobre mí*/
+#sobre-mi {
+    background-color: var(--color-blanco);
+    padding: var(--espaciado-lg);
+    max-width: 800px;
+    margin: var(--espaciado-lg) auto;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+}
+
+#sobre-mi img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: var(--espaciado-md);
+}
+
+#sobre-mi p {
+    color: var(--color-texto2);
+    margin-bottom: var(--espaciado1);
+}
+
+/*Proyectos (uso de Grid)*/
+#proyectos {
+    padding: var(--espaciado-lg);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--espaciado-md);
+    margin-top: var(--espaciado-md);
+}
+
+.proyecto {
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: var(--espaciado-md);
+}
+
+.proyecto img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: var(--espaciado1);
+}
+
+.proyecto h2 {
+    font-size: 1.1rem;
+    color: var(--color-azul);
+}
+
+.proyecto p {
+    font-size: 0.9rem;
+    color: var(--color-texto2);
+    margin-bottom: var(--espaciado1);
+}
+
+.proyecto a {
+    color: var(--color-azul);
+    font-size: 0.9rem;
+}
+
+.proyecto a:hover {
+    text-decoration: underline;
+}
+
+/*Contacto*/
+#contacto {
+    background-color: var(--color-blanco);
+    padding: var(--espaciado-lg);
+    max-width: 600px;
+    margin: var(--espaciado-lg) auto;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: var(--espaciado1);
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    padding: 0.6rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--color-azul);
+}
+
+button[type="submit"] {
+    margin-top: var(--espaciado1);
+    padding: 0.6rem 1.5rem;
+    background-color: var(--color-azul);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #1d4ed8;
+}
+
+/*Pie de página*/
+footer {
+    background-color: var(--color-azul);
+    color: white;
+    text-align: center;
+    padding: var(--espaciado-md);
+}
+
+footer a {
+    color: white;
+    text-decoration: underline;
+}
+
+/*Media queries para tablet y móvil*/
+@media (max-width: 768px) {
+    .grid-proyectos {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-direction: column;
+        gap: var(--espaciado1);
+        text-align: center;
+    }
+}
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 1.4rem;
+    }
+
+    #sobre-mi,
+    #proyectos,
+    #contacto {
+        padding: var(--espaciado-md);
+        margin: var(--espaciado-md) auto;
+    }
+}

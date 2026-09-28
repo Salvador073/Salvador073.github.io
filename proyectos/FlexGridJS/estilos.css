@@ -1,0 +1,233 @@
+/* Estructura principal con Grid */
+.dashboard {
+	display: grid;
+	grid-template-areas:
+		"cabecera cabecera"
+		"lateral  principal"
+		"pie      pie";
+	grid-template-columns: 200px 1fr;
+	grid-template-rows: auto 1fr auto;
+	min-height: 100vh;
+}
+
+.cabecera  { grid-area: cabecera; }
+.lateral   { grid-area: lateral; }
+.principal { grid-area: principal; }
+.pie       { grid-area: pie; }
+
+
+/* Cabecera con Flexbox */
+.cabecera {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px 25px;
+	background: #712a95;
+	color: white;
+}
+.cabecera nav:hover{
+	cursor: pointer;
+	color: #dddcdc
+}
+
+.avatar {
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	background: #f97316;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1rem;
+
+}
+
+
+/* Lateral izquierdo */
+.lateral {
+	background: #0e0e33;
+	color: #ffffff;
+	padding: 16px;
+}
+
+.lateral ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.lateral li {
+	padding: 10px;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.lateral li:hover {
+	background: #dddcdc;
+	color: white;
+}
+
+
+/* Área principal */
+.principal {
+	background:#dcdcdc;
+	padding: 25px;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+
+/* Tarjetas de estadísticas con Grid auto-fit */
+.tarjetas {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 20px;
+}
+
+/* Cada tarjeta con Flexbox interno */
+.tarjeta {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	position: relative;
+	background: white;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px #000000;
+}
+
+.icono {
+	font-size: 2rem;
+}
+
+.info {
+	display: flex;
+	flex-direction: column; /* Título arriba, valor abajo */
+}
+
+.info h3 {
+	font-size: 1rem;
+	color: #757575;
+	font-weight: normal;
+}
+
+.info p {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+/* Variación de cada tarjeta */
+.variacion {
+	position: absolute;
+	bottom: 10px;
+	right: 12px;
+	font-size: 0.78rem;
+	color: #22c55e;
+	font-weight: bold;
+}
+
+.negativo {
+	color: #ef4444;
+}
+
+
+/* Lista de usuarios */
+.lista-usuarios {
+	background: white;
+	border-radius: 8px;
+	padding: 20px;
+	box-shadow: 0 2px 5px #000000;
+}
+
+.lista-usuarios h2 {
+	margin-bottom: 15px;
+}
+
+/* Cada fila con Flexbox */
+.fila-usuario {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	padding: 10px 0;
+	border-bottom: 1px solid #ffffff;
+}
+
+.fila-usuario:hover {
+	background: #dddcdc;
+}
+
+.avatar-usuario {
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	background: #712a95;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1rem;
+	margin-left: 10px;
+}
+
+.usuario-info {
+	display: flex;
+	flex-direction: column; /* Nombre arriba, email abajo */
+	flex-grow: 1; /* Empuja el botón a la derecha */
+}
+
+.usuario-info span {
+	font-size: 1rem;
+	color: #6b6969;
+}
+
+.boton {
+	padding: 6px 16px;
+	border: 2px solid #712a95;
+	background: transparent;
+	color: #712a95;
+	border-radius: 20px;
+	cursor: pointer;
+	font-size: 1rem;
+}
+
+.boton:hover {
+	background: #712a95;
+	color: white;
+}
+
+
+/* Pie de página */
+.pie {
+	background: #2d2d3a;
+	color: #dddcdc;
+	text-align: center;
+	padding: 4px;
+}
+
+
+/* Media query para móvil */
+@media (max-width: 768px) {
+
+	/* Todo en una sola columna */
+	.dashboard {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"cabecera"
+			"lateral"
+			"principal"
+			"pie";
+	}
+
+	/* El menú de la cabecera se oculta */
+	.menu {
+		display: none;
+	}
+
+	/* Las tarjetas pasan a 1 columna */
+	.tarjetas {
+		grid-template-columns: 1fr;
+	}
+}
+#texto-extra { display: none}

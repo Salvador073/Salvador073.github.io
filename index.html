@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Mi web personal</title>
+	<link rel="stylesheet" href="estilos.css" />
+    <meta name="description" content="Página sobre mí y mis proyectos">
+    <meta name="keywords" content="Proyectos, HTML, CSS">
+    <meta name="author" content="Daniel">
+</head>
+
+<body>
+    <header class="navbar">
+		<span class="logo">Daniel Salvador</span>
+        <h1> Índice: </h1>
+		<nav class="nav-links" id="navLinks"><ul>
+			<li><a href="#sobre-mi">Sobre mí</a></li>
+			<li><a href="#proyectos">Proyectos</a></li>
+			<li><a href="#contacto">Contacto</a></li>
+		</ul></nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="hero-contenido">
+    <h2>Desarrollador de aplicaciones multiplataforma</h2>
+    <p>En constante aprendizaje para poder encontrar el mejor trabajo posible.</p>
+  </div>
+</section>
+
+<section id="sobre-mi">
+    <h2> Sobre mí:</h2>
+    <img src="img/yo.png" alt="Foto de Daniel Salvador"/>
+			<div class="sobre-mi-texto">
+        <p>
+            Me llamo <strong>Daniel Salvador Martínez</strong> y tengo 19 años.
+            Nací el 17 de junio de 2007 en Tauste, un pequeño pueblo de Zaragoza.
+        </p>
+        <p>
+            En junio de 2025 terminé el Bachillerato de Ciencias y Tecnología en el IES Río Arba.
+            Actualmente estudio el Grado Superior de
+            <strong>Desarrollo de Aplicaciones Multiplataforma (DAM)</strong>
+            en ThePowerFP.
+        </p>
+        <p>
+            Mi objetivo es completar <strong>DAM</strong> y después cursar <strong>DAW</strong>
+            para especializarme en el desarrollo web full stack.
+        </p>
+        </div>
+</section>
+
+<section id="proyectos">
+    <h1>Mis proyectos:</h1>
+    <div class="grid-proyectos">
+
+    <article class="proyecto">
+        <h2>Proyecto 1</h2>
+        <p>Este fue el primer proyecto real que hice de HTML, consistía en poner un poco sobre mí y mis gustos.
+            Es básico ya que solo usa HTML.
+        </p>
+        <img src="img/proyecto1.jpg" alt="Proyecto 1">
+        <h3><a href="proyectos/mi-web/index.html" target="_blank">Ver proyecto</a></h3>
+    </article>
+    <article class="proyecto">
+        <h2>Proyecto 2</h2>
+        <p>Un pequeño trabajo que nos mandó nuestra profesora y lo hice a mi estilo.</p>
+        <img src="img/proyecto2.jpg" alt="Proyecto 2">
+        <h3><a href="proyectos/Act5/index.html" target="_blank">Ver proyecto</a></h3>
+    </article>
+    <article class="proyecto">
+        <h2>Proyecto 3</h2>
+        <p>Un pequeño proyecto de clase para hacer con Flex y Grid y, además, introducir un poco de JS</p>
+        <img src="img/proyecto3.jpg" alt="Proyecto 3">
+        <h3><a href="proyectos/FlexGridJS/Tema4Proyecto.html" target="_blank">Ver proyecto</a></h3>
+ 
+    </article>
+    <article class="proyecto">
+        <h2>Proyecto 4</h2>
+        <p>Es como el proyecto 1 pero con un par de estilos css que nos dijo de usar nuestra profesora.</p>
+        <img src="img/proyecto4.jpg" alt="Proyecto 4">
+        <h3><a href="proyectos/SalvadorDaniel_DAM_LenguajeDeMarcas_ZGZ_Presencial_Unidad3_ACT6(PROYECTO)/index.html" target="_blank">Ver proyecto</a></h3>
+    </article>
+  </div>
+</section>
+
+<section id="contacto">
+    <h1>Como contactar conmigo:</h1>
+    <form action="#" method="post">
+
+    <div class="campo">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+    </div>
+
+    <div class="campo">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="tuemail@gmail.com" required>
+    </div>
+
+    <div class="campo">
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+    </div>
+
+    <button type="submit">Enviar</button>
+
+  </form>
+</section>
+
+</main>
+
+<footer>
+  <a href="https://www.linkedin.com/in/daniel-salvador-martínez-2096573b3/" target="_blank" rel="noopener noreferrer">
+  Mi LinkedIn
+  </a>
+  <a href="https://www.linkedin.com/in/daniel-salvador-martínez-2096573b3/" target="_blank" rel="noopener noreferrer">
+  <p>Mi LinkTree</a></p>
+  </a>
+  <p>&copy; 2025 Daniel Salvador Martínez. Todos los derechos reservados.</p>
+</footer>
+</body>
+</html>
